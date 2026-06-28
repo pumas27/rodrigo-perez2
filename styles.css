@@ -1,0 +1,448 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Georgia, serif;
+    background:#d6d6d6;
+    color:#111;
+    animation:fadePage 0.8s ease;
+}
+html, body{
+    width:100%;
+    height:100%;
+}
+
+/* ========================= */
+/* ANIMACIONES */
+/* ========================= */
+
+@keyframes fadePage{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ========================= */
+/* HOME */
+/* ========================= */
+
+.home{
+    overflow:hidden;
+}
+
+/* VIDEO */
+
+.bg-video{
+    position:fixed;
+
+    top:50%;
+    left:50%;
+
+    min-width:100%;
+    min-height:100%;
+
+    width:auto;
+    height:auto;
+
+    transform:translate(-50%, -50%);
+
+    object-fit:cover;
+
+    z-index:-3;
+    
+    animation:slowZoom 20s infinite alternate ease-in-out;
+
+
+@keyframes slowZoom{
+    from{
+        transform:translate(-50%, -50%) scale(1);
+    }
+
+    to{
+        transform:translate(-50%, -50%) scale(1.08);
+    }
+}
+}
+
+/* OVERLAY */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    z-index:-2;
+}
+
+/* HERO */
+
+.hero{
+    width:100%;
+    height:100vh;
+    position:relative;
+}
+
+/* TEXTO HOME */
+
+.hero-content{
+    position:absolute;
+    left:8%;
+    top:38%;
+    color:white;
+    animation:fadeUp 1s ease;
+}
+
+.hero-content h1{
+    font-size:82px;
+    font-weight:normal;
+}
+
+.hero-content h2{
+    margin-top:10px;
+    color:#c89b3c;
+    font-style:italic;
+    font-size:42px;
+    font-weight:normal;
+}
+
+.hero-content p{
+    margin-top:15px;
+    font-size:24px;
+    color:#ddd;
+}
+
+/* MENÚ HOME */
+
+.menu{
+    position:absolute;
+    right:60px;
+    bottom:50px;
+
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+
+    animation:fadeUp 1.2s ease;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-size:28px;
+    position:relative;
+    width:fit-content;
+    transition:0.3s;
+}
+
+/* ========================= */
+/* HEADER INTERNO */
+/* ========================= */
+
+.topbar{
+    padding:35px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    text-decoration:none;
+    color:#111;
+    font-size:28px;
+}
+
+.topbar nav{
+    display:flex;
+    gap:30px;
+}
+
+.topbar nav a{
+    color:#111;
+    text-decoration:none;
+    position:relative;
+}
+
+/* ========================= */
+/* SUBRAYADO */
+/* ========================= */
+
+.menu a::after,
+.topbar nav a::after,
+.underline::after{
+
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:1px;
+    background:#c89b3c;
+    transition:0.4s;
+}
+
+.menu a:hover::after,
+.topbar nav a:hover::after,
+.contact-item:hover .underline::after{
+    width:100%;
+}
+
+.menu a:hover,
+.topbar nav a:hover{
+    color:#c89b3c;
+}
+
+/* ========================= */
+/* PÁGINAS */
+/* ========================= */
+
+.page{
+    min-height:100vh;
+    padding:80px 8%;
+}
+
+.page h1{
+    font-size:58px;
+    margin-bottom:50px;
+    color:#111;
+}
+
+/* ========================= */
+/* CONOCE */
+/* ========================= */
+
+.bio-grid{
+    display:grid;
+    gap:50px;
+    max-width:1000px;
+}
+
+.bio-grid h2{
+    margin-bottom:15px;
+    color:#c89b3c;
+    font-weight:normal;
+}
+
+.bio-grid p,
+.bio-grid li{
+    line-height:1.9;
+    font-size:18px;
+}
+
+/* ========================= */
+/* MÚSICA */
+/* ========================= */
+
+.media-block{
+    margin-bottom:70px;
+}
+
+.media-block h2{
+    margin-bottom:20px;
+    color:#c89b3c;
+    font-weight:normal;
+}
+
+video{
+    width:100%;
+    max-width:950px;
+}
+
+audio{
+    width:100%;
+    max-width:600px;
+    margin-bottom:20px;
+}
+
+/* ========================= */
+/* PROYECTOS */
+/* ========================= */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    background:#ececec;
+    padding:30px;
+    border-left:2px solid #c89b3c;
+    transition:0.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-6px);
+}
+
+.project-card h2{
+    color:#c89b3c;
+    margin-bottom:15px;
+    font-size:24px;
+    font-weight:normal;
+}
+
+.project-card p{
+    margin-bottom:15px;
+    line-height:1.8;
+}
+
+.project-card a{
+    text-decoration:none;
+    color:#111;
+}
+
+/* ========================= */
+/* CONTACTO */
+/* ========================= */
+
+.contact-grid{
+    display:flex;
+    flex-direction:column;
+    gap:45px;
+}
+
+.contact-item span{
+    color:#666;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:12px;
+}
+
+.contact-item p{
+    position:relative;
+    display:inline-block;
+    margin-top:10px;
+    padding-bottom:5px;
+    font-size:28px;
+}
+
+.contact-item a{
+    display:block;
+    margin-top:15px;
+    color:#c89b3c;
+    text-decoration:none;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:768px){
+
+    .hero-content{
+        left:7%;
+        top:35%;
+    }
+
+    .hero-content h1{
+        font-size:48px;
+    }
+
+    .hero-content h2{
+        font-size:28px;
+    }
+
+    .hero-content p{
+        font-size:18px;
+    }
+
+    .menu{
+        right:30px;
+        bottom:30px;
+    }
+
+    .menu a{
+        font-size:22px;
+    }
+
+    .topbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .topbar nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .page h1{
+        font-size:42px;
+    }
+}
+
+/* ========================= */
+/* GALERÍA */
+/* ========================= */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+
+    transition:0.4s;
+
+    filter:grayscale(20%);
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.03);
+    filter:grayscale(0%);
+}
+
+/* ========================= */
+/* AUDIO */
+/* ========================= */
+
+.audio-card{
+    margin-bottom:35px;
+    max-width:700px;
+}
+
+.audio-card h3{
+    margin-bottom:12px;
+    color:#c89b3c;
+    font-weight:normal;
+    letter-spacing:1px;
+}
+
+audio{
+    width:100%;
+}
+
+.video-player{
+    width:100%;
+    max-width:1000px;
+    display:block;
+    margin-top:20px;
+}
